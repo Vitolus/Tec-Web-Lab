@@ -8,30 +8,32 @@
     <meta name="keyword"
           content="pallavolo, Italia, maschile, campionato, mondiale, 2022, Giannelli, Balaso, Galassi, Lavia"/>
     <meta name="author" content="Davide Vitagliano"/>
+    <link rel="stylesheet" href="style.css" media="handheld, screen"/>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 </head>
 <body>
 <header>
     <h1>Federazione Italiana Pallavolo</h1>
     <h2>La pallavolo maschile italiana</h2>
 </header>
-<nav>
+<nav id="breadcrumb">
     <p>Ti trovi in: <span lang="en"><a href="index.html">Home</a> &gt; &gt; La Squadra</span></p>
 </nav>
-<nav>
+<nav id="menu">
     <ul>
         <li lang="en"><a href="index.html">Home</a></li>
         <li><a href="allenatore.html">L'allenatore</a></li>
-        <li class="currentLink">La squadra</li>
+        <li id="currentlink">La squadra</li>
         <li><a href="fairplay.html">Il <span lang="en">fair play</span></a></li>
     </ul>
 </nav>
 <main>
     <h2>La Squadra</h2>
-    <dl>
+    <dl id="giocatori">
         <dt>Simone Giannelli - <em>Capitano</em></dt>
         <dd>
             <img src="images/giannelli.jpg" alt="Giannelli"/>
-            <dl>
+            <dl class="giocatore">
                 <dt>Data di nascita:</dt>
                 <dd>
                     <time datetime="1996-08-09">09/08/1996</time>
@@ -50,7 +52,7 @@
                 <dd>6</dd>
                 <dt>Punti totali:</dt>
                 <dd>872</dd>
-                <dt>Riconoscimenti:</dt>
+                <dt class="riconoscimenti">Riconoscimenti:</dt>
                 <dd>
                     <ul>
                         <li>Nelle stagioni 2014/15, 2015/16, 2016/17 vince il premio "G. Badiali" (miglior
@@ -72,7 +74,7 @@
         <dt>Riccardo Sbertoli</dt>
         <dd>
             <img src="images/sbertoli.jpg" alt="Sbertoli"/>
-            <dl>
+            <dl class="giocatore">
                 <dt>Data di nascita:</dt>
                 <dd>
                     <time datetime="1998-05-23">23/05/1998</time>
@@ -98,7 +100,7 @@
         <dt>Fabio Balaso</dt>
         <dd>
             <img src="images/balaso.jpg" alt="Balaso"/>
-            <dl>
+            <dl  class="giocatore">
                 <dt>Data di nascita:</dt>
                 <dd>
                     <time datetime="1995-10-20">20/10/1995</time>
@@ -117,7 +119,7 @@
                 <dd>7</dd>
                 <dt>Ricezioni:</dt>
                 <dd>1606</dd>
-                <dt>Riconoscimenti:</dt>
+                <dt class="riconoscimenti">Riconoscimenti:</dt>
                 <dd>
                     <ul>
                         <li>Nel 2013/14 vince il premio "G. Badiali" (miglior <abbr lang="en" title="under">U</abbr>23
