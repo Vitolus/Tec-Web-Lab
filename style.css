@@ -234,6 +234,17 @@ main>img{
 
 }
 
+main table caption{
+    font-size: 2em;
+    margin: .5em;
+    font-weight: bold;
+}
+
+th{
+    background-color: var(--breadcolor);
+    color: var(--txtcolor);
+}
+
 /*
 ==============
 SEZIONE FOOTER
