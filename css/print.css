@@ -24,7 +24,7 @@ header{
 }
 
 header h1{
-    content: url("images/logo_fipav.svg");
+    content: url("../images/logo_fipav.svg");
 }
 
 header h2{

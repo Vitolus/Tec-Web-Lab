@@ -1,5 +1,5 @@
 <?php
-require_once "connessione.php"; //"..".DIRECORY_SEPARATOR."connessione.php"
+require_once "..".DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."connessione.php";
 use DB\DBAccess;
 $paginaHTML= file_get_contents("squadra.html");
 $conn= new DBAccess();

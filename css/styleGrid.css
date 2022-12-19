@@ -26,12 +26,25 @@ html, body{
 }
 
 html{
-    background-image: url('images/bg.png');
+    background-image: url('../images/bg.png');
     background-size: contain;}
 
 body{
     max-width: 1024px;
     border:  1px solid black;
+    grid-template-areas: "h h"
+                         "b b"
+                         "m c"
+                         "f f";
+}
+
+#homepage{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: "h h h"
+                         "b b b"
+                         "m c m"
+                         "f f f";
 }
 
 /*
@@ -44,13 +57,14 @@ header{
     text-align:  center;
     padding: .7em 1em 1em;
     margin: .7em;
-    background: url("images/giannellipalleggio.jpg") right bottom no-repeat,
-        url("images/michielettocoppa.jpg")left top no-repeat;
+    background: url("../images/giannellipalleggio.jpg") right bottom no-repeat,
+    url("../images/michielettocoppa.jpg")left top no-repeat;
     background-size: 20%, 20%;
+    grid-area: m;
 }
 
 header h1{
-    background-image: url("images/logo_fipav.svg");
+    background-image: url("../images/logo_fipav.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -98,6 +112,7 @@ SEZIONE MENU
     width:  25%;
     font-size:  1.3em;
     padding:  .8em;
+    grid-area: m;
 }
 
 #menu a:link{
@@ -118,7 +133,7 @@ SEZIONE MENU
 
 #currentlink{
     color: var(--txtcolor);
-    background-image: url("images/favpng_volleyball-icon.png");
+    background-image: url("../images/favpng_volleyball-icon.png");
     background-position: left center;
     background-size: 1.2em;
     background-repeat: no-repeat;
@@ -143,6 +158,7 @@ aside{
     overflow: hidden;
     background-color: var(--bgcolor);
     color:  var(--txtcolor);
+    grid-area: m;
 }
 
 aside h2 {
@@ -173,6 +189,7 @@ main{
     padding: .5em 1em .5em 1.5em;
     color: var(--contentxtcolor);
     background-color: var(--contentbgcolor);
+    grid-area: c;
 }
 
 main>h2{
@@ -234,17 +251,6 @@ main>img{
 
 }
 
-main table caption{
-    font-size: 2em;
-    margin: .5em;
-    font-weight: bold;
-}
-
-th{
-    background-color: var(--breadcolor);
-    color: var(--txtcolor);
-}
-
 /*
 ==============
 SEZIONE FOOTER
@@ -255,6 +261,7 @@ footer{
     background-color: var(--breadcolor);
     color: var(--txtcolor);
     text-align: center;
+    grid-area: f;
 }
 
 footer img{
