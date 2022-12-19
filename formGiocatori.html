@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Volley Tribute</title>
+    <meta name="description" content="Questa pagina è dedicata al campionato mondiale di pallavolo maschile 2022.
+     Nel sito sono descritti i giocatori, l'allenatore e alcune regole e curiosità come il fairplay"/>
+    <meta name="keyword"
+          content="pallavolo, Italia, maschile, campionato, mondiale, 2022, Giannelli, Balaso, Galassi, Lavia"/>
+    <meta name="author" content="Davide Vitagliano"/>
+    <link rel="stylesheet" href="style.css" media="handheld, screen"/>
+    <link rel="stylesheet" href="mini.css" media="handheld, screen and (max-width:600px),
+        only screen and (max-device-width:600px)"/>
+    <link rel="stylesheet" href="print.css" media="print"/>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+</head>
+<body>
+<header>
+    <h1>Form Inserimento giocatore</h1>
+</header>
+<nav id="breadcrumb">
+    <p>Ti trovi in: <span lang="en"><a href="index.html">Home</a> &gt; &gt; La Squadra</span></p>
+</nav>
+<nav id="menu">
+    <ul>
+        <li lang="en"><a href="index.html">Home</a></li>
+        <li><a href="allenatore.html">L'allenatore</a></li>
+        <li><a href="squadra.html">La squadra</a></li>
+        <li id="currentlink">Form</li>
+        <li><a href="fairplay.html">Il <span lang="en">fair play</span></a></li>
+    </ul>
+</nav>
+<main>
+    <form method="post" action="formGiocatori.php">
+        <messaggiform>
+            <fieldset>
+                <legend>Informazioni generali</legend>
+
+                <label for="nome">Nome e Cognome: </label>
+                <span><input type="text" name="nome" id="nome" value="<valoreNome />"></span>
+
+                <p>Capitano?</p>
+
+                <span><input type="radio" id="capitano_si" name="capitano" value="1"></span>
+                <label for="capitano_si">Si</label><br>
+                <span><input type="radio" id="capitano_no" name="capitano" value="0" checked=""></span>
+                <label for="capitano_no">No</label><br>
+
+
+                <label for="dataNascita">Data di Nascita: </label>
+                <span><input type="date" name="dataNascita" id="dataNascita" value="<valData />" required=""></span><br>
+
+                <label for="luogo">Luogo di Nascita: </label>
+                <span><input type="text" name="luogo" id="luogo" value="<valLuogo />" required=""></span><br>
+
+                <label for="altezza">Altezza: </label>
+                <span><input type="number" min="130" name="altezza" id="altezza" value="<valoreAltezza />"></span><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Squadra</legend>
+
+                <label for="squadra">Squadra in campionato: </label>
+                <span><input type="text" name="squadra" id="squadra" value="<valoreSquadra />"></span><br>
+
+                <label for="maglia">Maglia: </label>
+                <span><input type="number" min="1" name="maglia" id="maglia" value="<valoreMaglia />"></span><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Nazionale</legend>
+
+                <label for="ruolo">Ruolo: </label>
+                <select id="ruolo" name="ruolo" value="<valoreRuolo />">
+                    <option value="Palleggiatore">Palleggiatore</option>
+                    <option value="Libero">Libero</option>
+                    <option value="Centrale">Centrale</option>
+                    <option value="Schiacciatore">Schiacciatore</option>
+                    <option value="Opposto">Opposto</option>
+                </select><br>
+
+                <label for="magliaNazionale">Maglia in Nazionale: </label>
+                <span><input type="number" min="1" name="magliaNazionale" id="magliaNazionale"
+                             value="<valoreMagliaNazionale />"></span><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Carriera</legend>
+                <label for="punti">Punti/ricezioni: </label>
+                <span><input type="number" min="1" name="punti" id="punti" value="<valorePunti />"></span><br>
+                <label for="riconoscimenti">Riconoscimenti: </label>
+                <span><textarea id="riconoscimenti"
+                                name="riconoscimenti">&lt;valoreRiconoscimenti /&gt;</textarea></span><br>
+                <label for="note">Note: </label>
+                <span><textarea id="note" name="note">&lt;valoreNote /&gt;</textarea></span><br>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Bottoni</legend>
+                <input type="submit" id="submit" name="submit" class="margineSinistro" value="Inserisci giocatore">
+                <input type="reset" id="reset" class="margineSinistro" value="Cancella tutto">
+            </fieldset>
+        </messaggiform>
+    </form>
+</main>
+</body>
+</html>
