@@ -1,7 +1,6 @@
 <?php
-namespace DB;
 class DBAccess {
-    private const HOST_DB= "localhost:8080";
+    private const HOST_DB= "127.0.0.1";
     private const DATABASE_NAME=  "dvitagli";
     private const USERNAME= "dvitagli";
     private const PASSWORD= "theeng2sohh6aQui";
