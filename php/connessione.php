@@ -10,7 +10,12 @@ class DBAccess {
         mysqli_report(MYSQLI_REPORT_ERROR);
         $this->conn= mysqli_connect(DBAccess::HOST_DB,DBAccess::USERNAME,DBAccess::PASSWORD,
             DBAccess::DATABASE_NAME);
-        return (bool)mysqli_connect_errno();
+        /*if(mysqli_connect_errno()){
+          return false;
+        }else{
+          return true;
+        }*/
+      return !mysqli_connect_errno();
     }
 
     public function closeDBConnection(){
@@ -18,7 +23,7 @@ class DBAccess {
     }
 
     public function getList(){
-        $query= "SELECT * FROM Giocatori ORDER BY ID";
+        $query= "SELECT * FROM giocatori ORDER BY ID";
         $queryResult= mysqli_query($this->conn, $query) or die("Errore in openDBConnection: ". mysqli_error($this->conn));
         if(mysqli_num_rows($queryResult)==0){
             return null;
@@ -27,6 +32,7 @@ class DBAccess {
             while($riga= mysqli_fetch_assoc($queryResult)){
                 $result[] = $riga;
             }
+            $queryResult->free();
             return $result;
         }
     }
