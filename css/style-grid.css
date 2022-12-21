@@ -24,25 +24,42 @@ html,body{
     color:var(--txtcolor);
 }
 
+#Homepage{
+    grid-template-areas: "h h h "
+                         "b b b "
+                         "m c n "
+                         "m c n"
+                         "f f f";
+}
+
 body{
     max-width: 1024px;
     border: 1px solid var(--contentxtcolor);
     background-color: var(--bgcolor);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: "h h h  "
+                         "b b b"
+                         "m c c"
+                         "m c c"
+                         "f f f ";
 }
 
 html{
     background-image: url("images/bg.webp");
-    background-size: contain; 
+    background-size: contain;
 }
 
 /*HEADER*/
+
 header{
+    grid-area: h;
     color: var(--txtcolor);
     text-align: center;
     padding: 1em;
     padding-top: 0.7em;
-    margin: 0.5em;
-    border: 1px   var(--contentxtcolor);
+    margin:0.5em;
+    border: 1px  var(--contentxtcolor);
     background: url("images/giannellipalleggio.jpg") right bottom no-repeat,
                 url("images/michielettocoppa.jpg") left top no-repeat;
     background-size: 20%,20%;
@@ -78,11 +95,12 @@ header >h2{
 }
 
 #breadcrumb{
+    grid-area:b;
     background-color:var(--breadcolor);
     color:var(--txtcolor);
     font-size: 1.1em;
     padding: 0.5em 0em 0.5em 1em;
-    border: 1px var(--contentxtcolor);
+    border: 1px  var(--contentxtcolor);
 }
 
 #breadcrumb a:visited{
@@ -92,10 +110,10 @@ header >h2{
 /*MENU*/
 
 #menu{
-    float:left;
+    grid-area: m;
     font-size: 1.3em;
-    padding: 0.8em;
-    width: 26%; /* la somma non deve fare 100 per gli effetti degli arrotondamenti */
+    padding: 1em;
+    line-height: 1.5em; /* la somma non deve fare 100 per gli effetti degli arrotondamenti */
 }
 
 #menu a:link{
@@ -105,6 +123,7 @@ header >h2{
 #menu a:visited{
     color:var(--visitedcolor);
 }
+
 #breadcrumb a:link{
     color:var(--linkcolor);
 }
@@ -116,10 +135,7 @@ header >h2{
 /*ASIDE*/
 
 aside{
-    float:right;
-    width: 20%; 
-    padding: 0.5em;
-    margin:0.4em;
+    grid-area: n;
     background-color: var(--bgcolor);
     overflow: hidden;
 }
@@ -140,11 +156,11 @@ aside dt {
 }
 
 /*MENU*/
+
 main{
+    grid-area: c;
    color:var(--newstxtcolor);
    background-color: var(--contentbgcolor);
-   margin-left: 28%;
-   width: 66,5%;
    padding: 1.75em;
    border: 1px solid var(--contentxtcolor);  
 }
@@ -192,7 +208,7 @@ main>dl{
     background-image: url("images/favpng_volleyball-icon.png");
     background-repeat: no-repeat;
     background-position: left ;
-    padding-left: 1.3em;/* margin non è coperto da sfondo*/
+    padding-left: 1.3em;
     background-size: 1.2em;
 }
 
@@ -236,10 +252,10 @@ dt.Riconoscimenti{
 /*FOOTER*/
 
 footer{
+    grid-area: f;
     background-color: var(--breadcolor);
     color:var(--txtcolor);
     text-align: center;
-    padding: 1.0em;  
     border: 1px solid var(--contentxtcolor);   
 }
 
@@ -249,7 +265,33 @@ footer p{
     font-size: 0.8em;
 }
 
-thead{
-    color:#fff;
-    background-color: black;
+.aiuti{
+position: absolute;
+height: 1px;
+width: 1px;
+overflow: hidden;
+clip: rect(1px, 1px, 1px, 1px);
+}
+
+thead,tfoot{
+background-color: var(--breadcolor);
+color: #FFF;
+}
+
+table, th, td {
+    border: 2px solid black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table{
+    width: 95%;
+}
+th,td{
+    padding: 0.5em;
+}
+caption{
+    font-weight: bold;
+    font-size: 1.6em;
+    padding: 0.7em;
 }

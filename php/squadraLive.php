@@ -7,7 +7,6 @@ use DB\DBAccess;
 //a prescindere dal sistema operativo
 
     require_once "..".DIRECTORY_SEPARATOR."connessione.php"; //DIRECTORY_SEPARATOR è una costante che contiene il separatore di directory del sistema operativo
-
     $paginaHTML = file_get_contents("squadra_php.html"); //legge il file squadra.html e lo mette in una stringa
 
     $connessione = new DBAccess(); //crea un oggetto di tipo DBAccess come handle per la connessione
@@ -26,13 +25,48 @@ use DB\DBAccess;
             $stringaGiocatori .= '<dl id="giocatori">'; //crea una stringa vuota
 
         foreach ($giocatori as $giocatore) { //Eseguiamo un ciclo per prendere ogni giocatore dal DB
-            //Compito per casa: creare i vari dt e dd (serve una form)
-            //Pagina inserisci giocatore (con i campi della squadra e mettere il campo "Capitano")
+            //creare i vari dt e dd
 
-            //$stringaGiocatori .= '<dt>'.$giocatore['nome'].'</dt>'; //aggiunge il nome del giocatore
-            //$stringaGiocatori .= '<dd>'.$giocatore['cognome'].'</dd>'; //aggiunge il cognome del giocatore
+            $stringaGiocatori .= "<dt>" . $giocatore['nome'];
+            if($giocatore['capitano']){
+                $stringaGiocatori .= " - <em>Capitano</em>";
+            }
+            $stringaGiocatori .= "</dt>"
+                . '<dd> <img src="' . $giocatore['immagine'] . '" alt=""/>'
+                . '<dl class="giocatore"> <dt>Data di nascita</dt>'
+                . '<dd>' . $giocatore['dataNascita'] . '</dd>'
+                . '<dt>Luogo</dt>'
+                . '<dd>' . $giocatore['luogo'] . '</dd>'
+                . '<dt>Squadra</dt>'
+                . '<dd>' . $giocatore['squadra'] . '</dd>'
+                . '<dt>Ruolo</dt>'
+                . '<dd>' . $giocatore['ruolo'] . '</dd>'
+                . '<dt>Altezza</dt>'
+                . '<dd>' . $giocatore['altezza'] . '</dd>'
+                . '<dt>Maglia</dt>'
+                . '<dd>' . $giocatore['maglia'] . '</dd>'
+                . '<dt>Maglia in nazinale</dt>'
+                . '<dd>' . $giocatore['magliaNazionale'] . '</dd>';
+
+            if($giocatore['ruolo'] != 'Libero'){
+                $stringaGiocatori .= '<dt>Punti totali </dt>';
+            }
+            else{
+                $stringaGiocatori .= '<dt>Ricezioni</dt>';
+            }
+            $stringaGiocatori .= '<dd>' . $giocatore['punti'] . '</dd>';
+
+            if ($giocatore['riconoscimenti']) {
+                $stringaGiocatori .= '<dt class="Riconoscimenti">Riconoscimenti</dt>'
+                    . '<dd>' . $giocatore['riconoscimenti'] . '</dd>';
+            }
+
+            if ($giocatore['note']) {
+                $stringaGiocatori .= '<dt class="Riconoscimenti">Riconoscimenti</dt>'
+                    . '<dd>' . $giocatore['note'] . '</dd>';
+            }
+            $stringaGiocatori .= '</dl></dd>';
         }
-    
             $stringaGiocatori .= '</dl>'; //aggiunge la chiusura della lista
         }
         else{
@@ -41,7 +75,7 @@ use DB\DBAccess;
     }
     else{
         //Occorre mettere il testo in forma paragrafo <p> per fare in modo che il browser lo interpreti come codice html
-        $stringaGiocatori = "<p>I sistemi sono momentaneamente fuori servizio</p>"; 
+        $stringaGiocatori="<span>Alcun giocatore è presente</span>"; #manda una mail all'amministratore per avvisarlo        
         //se ci fosse un problema reale, chiaramente si cerca di contattare l'admin il prima possibile
     }
 
