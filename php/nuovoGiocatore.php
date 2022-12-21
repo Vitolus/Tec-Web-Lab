@@ -1,5 +1,5 @@
 <?php
-require_once "connessione.php";
+require_once ".".DIRECTORY_SEPARATOR."connessione.php";
 
 $paginaHTML = file_get_contents("nuovoGiocatore.html");
 

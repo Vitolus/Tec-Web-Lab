@@ -6,8 +6,8 @@ use DB\DBAccess;
 //si usa invece una concatenazione di stringhe per fare in modo di muoversi tra le cartelle
 //a prescindere dal sistema operativo
 
-    require_once "..".DIRECTORY_SEPARATOR."connessione.php"; //DIRECTORY_SEPARATOR è una costante che contiene il separatore di directory del sistema operativo
-    $paginaHTML = file_get_contents("squadra_php.html"); //legge il file squadra.html e lo mette in una stringa
+    require_once ".".DIRECTORY_SEPARATOR."connessione.php"; //DIRECTORY_SEPARATOR è una costante che contiene il separatore di directory del sistema operativo
+    $paginaHTML = file_get_contents("../html/squadra_php.html"); //legge il file squadra.html e lo mette in una stringa
 
     $connessione = new DBAccess(); //crea un oggetto di tipo DBAccess come handle per la connessione
     $stringaGiocatori = "";
@@ -81,4 +81,3 @@ use DB\DBAccess;
 
     echo str_replace("<listaGiocatori />", $stringaGiocatori, $paginaHTML); 
     //sostituisce la stringa <listaGiocatori /> con la stringa $stringaGiocatori cercando nella pagina HTML
-?>

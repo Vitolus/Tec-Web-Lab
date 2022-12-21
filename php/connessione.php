@@ -2,9 +2,9 @@
 namespace DB;
 class DBAccess{
     private const HOST_DB = "127.0.0.1";
-    private const DATABASE_NAME = "grovesti";
-    private const USERNAME = "grovesti";
-    private const PASSWORD = "ahx4uyooPueC5nia";
+    private const DATABASE_NAME = "dvitagli";
+    private const USERNAME = "dvitagli";
+    private const PASSWORD = "theeng2sohh6aQui";
 
     private $connection;
 
@@ -46,5 +46,3 @@ class DBAccess{
     }
     
 }
-
-?>
